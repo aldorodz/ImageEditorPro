@@ -147,7 +147,7 @@ packages:
       path: "."
       ref: HEAD
       resolved-ref: "5fb88f1fa36e5e747b9c921d2aee3e1872a03015"
-      url: "git@gitlab.com:overcode-solutions/firexcode.git"
+      url: "https://github.com/aldodevs/firexcode.git"
     source: git
     version: "1.0.8"
   flutter:
