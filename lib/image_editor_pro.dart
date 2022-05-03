@@ -265,7 +265,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
         key: scaf,
         appBar: AppBar(
           actions: <Widget>[
-            Icon(FontAwesomeIcons.boxes).xIconButton(onPressed: () {
+            /* Icon(FontAwesomeIcons.boxes).xIconButton(onPressed: () {
               showCupertinoDialog(
                   context: context,
                   builder: (context) {
@@ -309,7 +309,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                       ),
                     );
                   });
-            }),
+            }),*/
             Icon(Icons.clear).xIconButton(onPressed: () {
               _controller.points.clear();
               setState(() {});
@@ -766,18 +766,23 @@ class _ImageEditorProState extends State<ImageEditorPro> {
 
   Future<void> loadImage(File imageFile) async {
     final decodedImage = await decodeImageFromList(imageFile.readAsBytesSync());
+
+    var deviceWidth = MediaQuery.of(context).size.width;
+
+    var ratio = deviceWidth / decodedImage.width;
+
     setState(() {
-      height = decodedImage.height;
-      width = decodedImage.width;
+      height = (decodedImage.height * ratio).toInt();
+      width = (decodedImage.width * ratio).toInt();
       _image = imageFile;
       _controller.clear();
     });
   }
 
-  void _closeModal(void value) {
+  /* void _closeModal(void value) {
     openbottomsheet = false;
     setState(() {});
-  }
+  } */
 }
 
 class Signat extends StatefulWidget {
