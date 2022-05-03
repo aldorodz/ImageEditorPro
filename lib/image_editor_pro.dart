@@ -24,8 +24,7 @@ import 'modules/colors_picker.dart'; // import this
 
 TextEditingController heightcontroler = TextEditingController();
 TextEditingController widthcontroler = TextEditingController();
-var width = 300;
-var height = 300;
+
 List<Map> widgetJson = [];
 //List fontsize = [];
 //List<Color> colorList = [];
@@ -130,6 +129,9 @@ class _ImageEditorProState extends State<ImageEditorPro> {
   double brightnessValue = 0;
   double saturationValue = 0;
 
+  var width = 300;
+  var height = 300;
+
   @override
   Widget build(BuildContext context) {
     return Screenshot(
@@ -181,7 +183,10 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                       //     ),
                       //   )
                       : Container(),
-                  Signat().xGesture(
+                  Signat(
+                    height: height,
+                    width: width,
+                  ).xGesture(
                     onPanUpdate: (DragUpdateDetails details) {
                       setState(() {
                         RenderBox object = context.findRenderObject();
@@ -249,7 +254,6 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                   )
                 ],
               )).toContainer(
-            margin: EdgeInsets.all(20),
             color: Colors.white,
             width: width.toDouble(),
             height: height.toDouble(),
@@ -777,6 +781,11 @@ class _ImageEditorProState extends State<ImageEditorPro> {
 }
 
 class Signat extends StatefulWidget {
+  final width;
+  final height;
+
+  Signat({this.width, this.height});
+
   @override
   _SignatState createState() => _SignatState();
 }
@@ -794,8 +803,8 @@ class _SignatState extends State<Signat> {
       [
         Signature(
             controller: _controller,
-            height: height.toDouble(),
-            width: width.toDouble(),
+            height: widget.height.toDouble(),
+            width: widget.width.toDouble(),
             backgroundColor: Colors.transparent),
       ],
     );
