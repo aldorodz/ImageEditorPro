@@ -19,7 +19,7 @@ dependencies:
   signature: ^4.0.2
   flutter_colorpicker: 1.0.2
   firexcode:
-    path: ../ImageEditorPro-master/FireXcode-master/
+    path: ./FireXcode-master/
 
   flutter_web_plugins:
     sdk: flutter
