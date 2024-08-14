@@ -20,7 +20,9 @@ dependencies:
   flutter_colorpicker: 1.0.2
   platform: ^3.1.0
   firexcode:
-    git: https://github.com/aldodevs/firexcode.git
+    git:
+      url: https://github.com/aldorodz/firexcode.git
+      ref: 03ebd61
 
   flutter_web_plugins:
     sdk: flutter
