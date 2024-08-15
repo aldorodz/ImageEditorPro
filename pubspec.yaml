@@ -22,7 +22,6 @@ dependencies:
   firexcode:
     git:
       url: https://github.com/aldorodz/firexcode.git
-      ref: 4f19283
 
   flutter_web_plugins:
     sdk: flutter
