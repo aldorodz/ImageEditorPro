@@ -21,8 +21,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controllerDefaultImage = TextEditingController();
-  File _defaultImage;
-  File _image;
+  late File _defaultImage;
+  late File _image;
 
   Future<void> getimageditor() => Navigator.push(context, MaterialPageRoute(builder: (context) {
         return ImageEditorPro(
@@ -86,6 +86,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget condition({bool condtion, Widget isTrue, Widget isFalse}) {
+Widget condition({required bool condtion, required Widget isTrue, required Widget isFalse}) {
   return condtion ? isTrue : isFalse;
 }
